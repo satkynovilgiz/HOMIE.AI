@@ -1,0 +1,96 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #060610;
+  --bg2:     #0c0c1e;
+  --bg3:     #12122a;
+  --bg4:     #1a1a35;
+  --border:  rgba(255,255,255,.07);
+  --border2: rgba(255,255,255,.12);
+  --border3: rgba(255,255,255,.20);
+
+  --purple:  #8b5cf6;
+  --purple2: #a78bfa;
+  --purple3: #6d28d9;
+  --green:   #10b981;
+  --green2:  #34d399;
+  --orange:  #f97316;
+  --pink:    #ec4899;
+  --blue:    #3b82f6;
+  --yellow:  #fbbf24;
+  --cyan:    #06b6d4;
+  --red:     #ef4444;
+
+  --text:    #f0f0ff;
+  --text2:   #a0a0cc;
+  --muted:   #606090;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --nav-h: 64px;
+  --sidebar-w: 240px;
+  --radius: 14px;
+  --radius-lg: 20px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  height: 100vh;
+}
+#root { height: 100vh; display: flex; flex-direction: column; }
+
+h1,h2,h3,h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.1;
+}
+a { text-decoration: none; color: inherit; }
+
+.grad {
+  background: linear-gradient(90deg, var(--purple2), var(--green2), var(--orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border3); border-radius: 4px; }
+::selection { background: rgba(139,92,246,.3); }
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; }
+  50%      { opacity: .5; }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+@keyframes glow {
+  0%,100% { box-shadow: 0 0 12px var(--purple); }
+  50%      { box-shadow: 0 0 30px var(--purple), 0 0 60px rgba(139,92,246,.3); }
+}
+@keyframes waveBar {
+  0%,100% { transform: scaleY(.3); }
+  50%      { transform: scaleY(1); }
+}
+@keyframes confettiFall {
+  to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+@keyframes dotBounce {
+  0%,60%,100% { transform: translateY(0); }
+  30%          { transform: translateY(-8px); }
+}
